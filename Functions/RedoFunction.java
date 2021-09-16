@@ -25,7 +25,7 @@ public class RedoFunction implements FuncoesInterface
         else
         {
             UndoRedo action = Menu.actions.get(Menu.current_action);
-            UndoRedo.redo(action, Menu.listofhourly, Menu.listofsalaried);
+            Redo.execute(action, Menu.listofhourly, Menu.listofsalaried);
             Menu.current_action++;
         }
     }

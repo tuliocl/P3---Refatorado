@@ -23,7 +23,7 @@ public class UndoFunction implements FuncoesInterface
         else
         {
             UndoRedo action = Menu.actions.get(Menu.current_action - 1);
-            UndoRedo.Undo(action,Menu.listofhourly,Menu.listofsalaried);
+            Undo.operation(action,Menu.listofhourly,Menu.listofsalaried);
 
             Menu.current_action -= 1;
             System.out.println(Menu.current_action);

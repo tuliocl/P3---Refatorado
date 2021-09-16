@@ -9,7 +9,6 @@ import Main.*;
 import Menu.*;
 import Validar.*;
 
-
 public class ChangeDataFunction implements FuncoesInterface
 {
     public static Scanner input = new Scanner(System.in).useLocale(Locale.ENGLISH);
@@ -92,37 +91,16 @@ public class ChangeDataFunction implements FuncoesInterface
         else if(choice == 4)
         {
             Employee.change_sindicatemember(mudar);
-            if(mudar.sindicate_data.sindicate_id == 0)
-            {
-                mudar.sindicate_data.sindicate_id = Menu.id_sindicato;
-                Menu.id_sindicato++;
-
-                System.out.println("Necessita alterar a taxa sindical");
-            }
         }
 
         else if(choice == 5)
         {
-            if(mudar.sindicate)
-            {
-                Employee.change_sindicateid(mudar);
-            }
-            else
-            {
-                System.out.print("Empregado não faz parte do sindicato\n");
-            }
+            Employee.change_sindicateid(mudar);
         }
 
         else if(choice == 6)
         {
-            if(mudar.sindicate)
-            {
-                Employee.change_sindicatetax(mudar);
-            }
-            else
-            {
-                System.out.print("Empregado não faz parte do sindicato\n"); 
-            }
+            Employee.change_sindicatetax(mudar);
         }  
 
         else if(choice == 7)
@@ -162,7 +140,6 @@ public class ChangeDataFunction implements FuncoesInterface
             }
         }
 
-        
         else
         {
             System.out.printf("Opção inválida!\n");
@@ -218,7 +195,6 @@ public class ChangeDataFunction implements FuncoesInterface
         {
             Salaried novo = new Salaried();
 
-            //copia os dados
             novo.type = 2;
             Employee.copy(novo,mudar);
 
@@ -237,7 +213,7 @@ public class ChangeDataFunction implements FuncoesInterface
             new_action.setAtt_salaried(novo);
         }
 
-        else if(tipo == 2)//assalariado -> horista
+        else if(tipo == 2)
         {
             //copia os dados
             Hourly novo = new Hourly();
@@ -260,5 +236,4 @@ public class ChangeDataFunction implements FuncoesInterface
             new_action.setAtt_hourly(novo);
         }
     }
-
 }

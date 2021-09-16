@@ -18,7 +18,7 @@ public class AddFunction implements FuncoesInterface
 
         int type = Validar.tipo_funcionario();
         Main.clear();
-        if(type == 1)//tipo horista
+        if(type == 1)
         {
             Hourly new_hourly = new Hourly();
             new_hourly = Hourly.add_hourly(new_hourly,Menu.id,Menu.id_sindicato);
@@ -36,7 +36,7 @@ public class AddFunction implements FuncoesInterface
             Menu.current_action++;
         }
 
-        else if(type == 2)//tipo assalariado
+        else if(type == 2)
         {
             Salaried new_salaried = new Salaried();
     
@@ -57,5 +57,4 @@ public class AddFunction implements FuncoesInterface
         
         Main.clear();     
     }
-     
 }

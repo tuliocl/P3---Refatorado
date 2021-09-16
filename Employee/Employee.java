@@ -111,23 +111,43 @@ public class Employee
         boolean novo = Validar.verifica_boolean();
 
         aux.sindicate = novo;
+
+        if(aux.sindicate_data.sindicate_id == 0)
+        {
+            aux.sindicate_data.sindicate_id = Menu.id_sindicato;
+            Menu.id_sindicato++;
+
+            System.out.println("Necessita alterar a taxa sindical");
+        }
     }
 
     public static void change_sindicateid(Employee aux)
     {
-        System.out.print("Digite a nova ID do sindicato: ");
-        int novo = Validar.int_valido();
+        if(aux.sindicate)
+        {
+            System.out.print("Digite a nova ID do sindicato: ");
+            int novo = Validar.int_valido();
+    
+            aux.sindicate_data.sindicate_id = novo;
+            return;
+        }
 
-        aux.sindicate_data.sindicate_id = novo;
+        System.out.print("Empregado não faz parte do sindicato\n");
     }
 
     public static void change_sindicatetax(Employee aux)
     {
-        System.out.print("Digite a nova taxa do sindicato: R$ ");
-        double novo = Validar.verifica_dinheiro();
-
-        aux.sindicate_data.mensal_taxe = novo;
+        if(aux.sindicate)
+        {
+            System.out.print("Digite a nova taxa do sindicato: R$ ");
+            double novo = Validar.verifica_dinheiro();
+    
+            aux.sindicate_data.mensal_taxe = novo;
+            return;
+        }
+        System.out.print("Empregado não faz parte do sindicato\n");
     }
+
     public static void change_schedule(Employee aux)
     {
         int tipo;
