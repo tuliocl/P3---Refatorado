@@ -1,6 +1,6 @@
 Dessign patterns aplicados:
 
-**Strategy**: Aplicado na pasta Schedule.
+**Strategy**: Aplicado na pasta Schedule.  
 Descrição  do problema: A classe possuia dois IFS que determinavam o seu funcionamento (Um para criar uma agenda semanal e outro para uma agenda mensal).  
 
 Solução: Padrão Strategy. Criada a interface, e duas classes para os funcionamentos, consegui eliminar o problema dos dois IFS. Eles agora, tem a função de setar qual estratégia será aplicada.  
