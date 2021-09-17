@@ -1,5 +1,6 @@
 package Menu;
 
+import Main.*;
 import Employee.*;
 import Functions.*;
 import UndoRedo.*;
@@ -31,7 +32,8 @@ public class Menu
 
     public static void Start()
     {
-        FuncoesInterface var = null;
+        FunctionsHandler functionshandler = new FunctionsHandler();
+        FuncoesInterface var;
 
         System.out.println("Bem vindo ao sistema!!!");
         while(true)
@@ -40,71 +42,15 @@ public class Menu
 
             int choice = Choice();
 
-            if(choice == 1)
+            if(choice == 12)
             {
-                var = new AddFunction();
+                System.out.println("Finalizando o sistema...");
+
             }
 
-            if(choice == 2)
-            {
-                var = new RemoveFunction();
-            }
-
-            if(choice == 3)
-            {
-                var = new ShowFunction();
-            }
-            
-            if(choice == 4)
-            {
-                var = new AddTimeCardFunction();
-            }
-
-            if(choice == 5)
-            {
-                var = new AddSaleFunction();
-            }
-
-            if(choice == 6)
-            {
-                var = new AddTaxFunction();
-            }
-            
-            if(choice == 7)
-            {
-                var = new ChangeDataFunction();
-            }
-
-            if(choice == 8)
-            {
-                var = new CreateScheduleFunction();
-            }
-
-            if(choice == 9)
-            {
-                var = new PayRollFunction();
-            }
-
-            if(choice == 10)
-            {
-                var = new UndoFunction();
-            }
-
-            if(choice == 11)
-            {
-                var = new RedoFunction();
-            }
-
-            if(choice == 12) //o codigo finaliza
-            {
-                System.out.println("Finalizando o sistema");
-                System.out.println("...");
-                break;
-            }
-
+            var = functionshandler.handler(choice);
             var.command();
         }
-
     }
 
     private static int Choice()
@@ -135,6 +81,7 @@ public class Menu
 
             else
             {
+                Main.clear();
                 System.out.print("Opcão invalida, digite novamente: ");
             }
         }

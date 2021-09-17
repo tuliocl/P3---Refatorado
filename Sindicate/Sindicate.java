@@ -17,7 +17,7 @@ public class Sindicate
         aux.sindicate_data.taxes.add(nova);
     }
 
-    public static void Taxa(Employee aux)//jogar pra sindicato
+    public static void Taxa(Employee aux)
     {
         System.out.print("Indique o dia [dd]: ");
         int dia = Validar.dia_valido();
