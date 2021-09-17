@@ -7,6 +7,7 @@ Solução: Padrão Strategy. Criada a interface, e duas classes para os funciona
 
 **Command**: Aplicado na pasta Menu.  
 Descrição  do problema: A classe Menu recebia um input (int - id) para selecionar qual função da classe Funções seria chamada. Isso era feito através de diversos IFS.  
+
 Solução: Com a aplicação do padrão Command, os ifs foram eliminados. A chamada da função escolhida, agora é gerenciada pela Classe FunctionsHandler.  
 
 **Smells Simples**:  
